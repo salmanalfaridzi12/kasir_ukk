@@ -113,7 +113,6 @@ $data = mysqli_fetch_array($hasil);
             <div class="bg-white py-2 collapse-inner rounded">
               <a class="collapse-item" href="index.php?page=pengguna&pengguna=Admin">Admin</a>
               <a class="collapse-item" href="index.php?page=pengguna&pengguna=Kasir">Kasir</a>
-              <a class="collapse-item" href="index.php?page=pengguna&pengguna=Manajer">Manajer</a>
             </div>
           </div>
         </li>
@@ -145,7 +144,7 @@ $data = mysqli_fetch_array($hasil);
           </a>
           <div id="pengaturan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="index.php?page=aplikasi">Aplikasi</a>
+              <a class="collapse-item" href="index.php?page=aplikasi">Toko</a>
 
             </div>
           </div>
