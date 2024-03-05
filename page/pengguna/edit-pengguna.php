@@ -199,14 +199,14 @@ session_start();
                 <div class="input-group my-3">
                     <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
                     <div class="input-group-append">
-                            <button type="button" id="pilih_foto" class="browse btn btn-dark">Pilih Foto</button>
+                            <button type="button" id="pilih_foto" class="browse btn btn-primary">Pilih Foto</button>
                     </div>
                 </div>
             <img src="assets/img/img80.png" id="preview" class="img-thumbnail">
         </div>
     </div>
     <br>
-    <button type="submit" name="edit_pengguna" id="edit_pengguna" class="btn btn-dark">Update Pengguna</button>
+    <button type="submit" name="edit_pengguna" id="edit_pengguna" class="btn btn-success">Update Pengguna</button>
 </form>
 
 <style>

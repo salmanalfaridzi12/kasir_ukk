@@ -125,6 +125,6 @@
     </select>
   </div>
 
-  <button type="submit" name="edit_pelanggan" class="btn btn-dark">Update Pelanggan</button>
+  <button type="submit" name="edit_pelanggan" class="btn btn-primary">Update Pelanggan</button>
 </form>
 

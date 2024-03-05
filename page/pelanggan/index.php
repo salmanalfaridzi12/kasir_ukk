@@ -35,7 +35,7 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <!-- Tombol tambah pelanggan -->
-      <button class="btn-tambah btn btn-dark btn-icon-split"><span class="text">Tambah</span></button>
+      <button class="btn-tambah btn btn-info btn-icon-split"><span class="text">Tambah</span></button>
       &nbsp;&nbsp;
       <!-- Tombol export pdf -->
       <a href="page/pelanggan/cetak/cetak_pelanggan_pdf.php?" target='blank' class="btn btn-danger btn-icon-split"><span class="text"><i class="fas fa-file-pdf"></i> Export PDF</span></a>

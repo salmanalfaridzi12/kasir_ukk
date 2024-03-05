@@ -28,6 +28,8 @@ $data = mysqli_fetch_array($hasil);
   <link href='page/aplikasi/logo/shop.png' rel='shortcut icon'>
   <!-- Custom styles for this template -->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Li+5WB86hQW3f8j/wyeMtHbZy0OWzr12sBvKF+umwv5H0vGcMXKBCpvJ5nEbw2RR1qEYB0iEkBdxBbxkLY2kwA==" crossorigin="anonymous" />
+
   <!-- Chart.js -->
   <script src="assets/plugin/chartjs/chart.js"></script>
   <!-- Custom styles for this page -->
@@ -176,9 +178,8 @@ $data = mysqli_fetch_array($hasil);
             <ul class="navbar-nav align-items-center">
               <li class="nav-item">
                 <a class="nav-link">
-                <div class="text-center d-none d-md-inline">
-        <button class="" id="sidebarToggle"><i class="fa-solid fa-backward"></i>TOMBOL KONTOL</button>
-      </div>
+               
+
 
                 </a>
               </li>

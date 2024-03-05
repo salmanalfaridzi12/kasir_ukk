@@ -104,5 +104,5 @@ $status = $data['status'];
         <label>Alamat:</label>
         <textarea name="alamat" class="form-control" rows="3"><?php echo $alamat_supplier; ?></textarea>
     </div>
-    <button type="submit" name="update_supplier" class="btn btn-dark">Update supplier</button>
+    <button type="submit" name="update_supplier" class="btn btn-primary">Update supplier</button>
 </form>

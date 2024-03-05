@@ -50,6 +50,6 @@ session_start();
             </div>
         </div>
     </div>
-    <button type="submit" name='tambah_kategori'class="btn btn-dark">Tambah</button>
+    <button type="submit" name='tambah_kategori'class="btn btn-primary">Tambah</button>
 </form>
 

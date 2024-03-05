@@ -53,7 +53,7 @@
                                     <div class="input-group my-3">
                                         <input type="text" class="form-control" disabled placeholder="Upload Gambar" id="file">
                                         <div class="input-group-append">
-                                            <button type="button" id="pilih_logo" class="browse btn btn-dark">Pilih Logo</button>
+                                            <button type="button" id="pilih_logo" class="browse btn btn-primary">Pilih Logo</button>
                                         </div>
                                     </div>
                                     <img src="page/aplikasi/logo/<?php echo $data['logo']; ?>" id="preview" width="40%" class="img-thumbnail">

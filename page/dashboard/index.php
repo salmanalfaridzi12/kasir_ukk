@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!-- Begin Page Content -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,76 +75,124 @@
 }
     </style>
 </head>
-<body>
-    
+
 <div class="container">
     <div class="row ">
+    <?php 
+        include 'config/database.php';
+        $hari_ini=date('Y-m-d');
+        
+        $kasir=0;
+        if ($_SESSION["level"]=="Kasir"){
+            $kasir=$_SESSION["id_pengguna"];
+            $sql="select SUM(harga*qty) as hari_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where p.id_kasir=$kasir and date(tanggal)='$hari_ini'";
+         }else {
+            $sql="select SUM(harga*qty) as hari_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where date(tanggal)='$hari_ini'";
+        }
+
+        $hasil=mysqli_query($kon,$sql);
+        $data = mysqli_fetch_array($hasil);       
+    ?>
         <div class="card-deck col-sm-3">
             <div class="card l-bg-cherry">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0 font-weight-bold">New Orders</h5>
+                        <h5 class="card-title mb-0 font-weight-bold">Penjualan hari ini</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0 font-weight-bold">
-                                3,243
-                            </h2>
+                        <div class="h4 mb-0 font-weight-bold ">Rp <?php  echo number_format($data['hari_ini'],0,',','.');?></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <?php 
+        include 'config/database.php';
+        $bulan_ini=date('m');
+        $tahun_ini=date('Y');
+        //Perintah sql untuk menampilkan semua data pada tabel jurusan
+        $kasir=0;
+        if ($_SESSION["level"]=="Kasir"){
+            $kasir=$_SESSION["id_pengguna"];
+            $sql="select SUM(harga*qty) as bulan_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where p.id_kasir=$kasir and month(tanggal)='$bulan_ini' and year(tanggal)='$tahun_ini' ";
+        }else {
+        $sql="select SUM(harga*qty) as bulan_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where month(tanggal)='$bulan_ini' and year(tanggal)='$tahun_ini' ";
+        }
+        $hasil=mysqli_query($kon,$sql);
+        $data = mysqli_fetch_array($hasil);
+    ?>
         <div class="card-deck col-sm-3">
             <div class="card l-bg-blue-dark">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0 font-weight-bold">Customers</h5>
+                        <h5 class="card-title mb-0 font-weight-bold">Penjualan bulan ini</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                15.07k
-                            </h2>
+                        <div class="h4 mb-0 font-weight-bold">Rp <?php  echo number_format($data['bulan_ini'],0,',','.');?></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <?php 
+        include 'config/database.php';
+        $tahun_ini=date('Y');
+        
+        if ($_SESSION["level"]=="Kasir"){
+            $kasir=$_SESSION["id_pengguna"];
+            $sql="select SUM(harga*qty) as tahun_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where p.id_kasir=$kasir and year(tanggal)='$tahun_ini'";
+        }else{
+            $sql="select SUM(harga*qty) as tahun_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where year(tanggal)='$tahun_ini'";
+        }
+
+        $hasil=mysqli_query($kon,$sql);
+        $data = mysqli_fetch_array($hasil);
+    ?>
         <div class="card-deck col-sm-3">
             <div class="card l-bg-green-dark">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0 font-weight-bold">Ticket Resolved</h5>
+                        <h5 class="card-title mb-0 font-weight-bold">Penjualan tahun ini</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0 font-weight-bold">
-                                578
-                            </h2>
+                        <div class="h4 mb-0 font-weight-bold ">Rp <?php  echo number_format($data['tahun_ini'],0,',','.');?></div>
                         </div>
-                        
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            
                     </div>
                 </div>
             </div>
         </div>
+        <?php 
+        include 'config/database.php';
+       
+        if ($_SESSION["level"]=="Kasir"){
+            $kasir=$_SESSION["id_pengguna"];
+            $sql="select SUM(harga*qty) as selama_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice where p.id_kasir=$kasir";
+
+        }else {
+            $sql="select SUM(harga*qty) as selama_ini from penjualan p inner join detail_penjualan d on d.no_invoice=p.no_invoice";
+
+        }
+
+        $hasil=mysqli_query($kon,$sql);
+        $data = mysqli_fetch_array($hasil);
+    ?>
         <div class="card-deck col-sm-3">
             <div class="card l-bg-orange-dark">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0 font-weight-bold">Revenue Today</h5>
+                        <h5 class="card-title mb-0 font-weight-bold">Penjualan selama ini</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0 font-weight-bold">
-                                $11.61k
-                            </h2>
+                        <div class="h4 mb-0 font-weight-bold">Rp <?php  echo number_format($data['selama_ini'],0,',','.');?></div>
+           
                         </div>
                     </div>    
                 </div>
@@ -153,5 +201,3 @@
     </div>
 </div>
 
-</body>
-</html>

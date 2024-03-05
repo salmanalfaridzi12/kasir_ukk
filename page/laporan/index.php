@@ -19,7 +19,7 @@
               <input type="date" class="form-control" name="sampai_tanggal" required>
             </div>
             <div class="col-sm-3">
-              <button type="button" id="btn-tampil" class="btn btn-dark"><span class="text"><i class="fas fa-search fa-sm"></i> Tampilkan</span></button>
+              <button type="button" id="btn-tampil" class="btn btn-primary"><span class="text"><i class="fas fa-search fa-sm"></i> Tampilkan</span></button>
             </div>
           </div>
         </form>

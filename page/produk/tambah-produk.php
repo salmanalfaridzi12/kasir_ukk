@@ -190,7 +190,7 @@ session_start();
         </div>
     </div>
 
-        <button type="submit" name="tambah_produk" class="btn btn-dark">Tambah</button>
+        <button type="submit" name="tambah_produk" class="btn btn-primary">Tambah</button>
 </form>
 
 <style>

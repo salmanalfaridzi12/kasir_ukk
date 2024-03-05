@@ -151,14 +151,14 @@ $kodepengguna = $huruf . sprintf("%03s", $id_pengguna);
                 <div class="input-group my-3">
                     <input type="text" class="form-control" disabled placeholder="Upload Foto" id="file">
                     <div class="input-group-append">
-                        <button type="button" id="pilih_foto" class="browse btn btn-dark">Pilih Foto</button>
+                        <button type="button" id="pilih_foto" class="browse btn btn-primary">Pilih Foto</button>
                     </div>
                 </div>
                 <img src="assets/img/img80.png" id="preview" class="img-thumbnail">
             </div>
         </div>
     </div>
-    <button type="submit" name="tambah_pengguna" id="tambah_pengguna" class="btn btn-dark" disabled>Tambah</button>
+    <button type="submit" name="tambah_pengguna" id="tambah_pengguna" class="btn btn-success" disabled>Tambah</button>
 </form>
 
 <style>

@@ -59,7 +59,7 @@ if (isset($_GET['pengguna'])) {
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <!-- Tombol tambah pengguna -->
-      <button <?php echo $aksi; ?> pengguna="<?php echo $pengguna; ?>" class="btn-tambah btn btn-dark btn-icon-split"><span class="text">Tambah</span></button>
+      <button <?php echo $aksi; ?> pengguna="<?php echo $pengguna; ?>" class="btn-tambah btn btn-success btn-icon-split"><span class="text">Tambah</span></button>
     </div>
     <div class="card-body">
       <!-- Tabel daftar pengguna -->

@@ -101,5 +101,5 @@ $kodepelanggan = $huruf . sprintf("%04s", $id_pelanggan);
     </select>
   </div>
 
-  <button type="submit" name="tambah_pelanggan" class="btn btn-dark">Tambah</button>
+  <button type="submit" name="tambah_pelanggan" class="btn btn-primary">Tambah</button>
 </form>

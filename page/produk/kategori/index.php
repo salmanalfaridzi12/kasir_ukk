@@ -33,7 +33,7 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <!-- Tombol tambah kategori produk -->
-      <button class="btn-tambah btn btn-dark btn-icon-split"><span class="text">Tambah</span></button>
+      <button class="btn-tambah btn btn-info btn-icon-split"><span class="text">Tambah</span></button>
     </div>
     <div class="card-body">
 
