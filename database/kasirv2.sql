@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Waktu pembuatan: 09 Okt 2022 pada 17.16
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.3.9
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 05 Mar 2024 pada 12.25
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +33,7 @@ CREATE TABLE `detail_penjualan` (
   `kode_produk` char(9) NOT NULL,
   `harga` mediumint(9) NOT NULL,
   `qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `detail_penjualan`
@@ -185,7 +184,12 @@ INSERT INTO `detail_penjualan` (`id_detail_penjualan`, `no_invoice`, `kode_produ
 (411, 'INV0229', 'P0096', 9300, 1),
 (412, 'INV0230', 'P0087', 11600, 1),
 (413, 'INV0231', 'P0105', 27000, 1),
-(414, 'INV0231', 'P0096', 9300, 1);
+(414, 'INV0231', 'P0096', 9300, 1),
+(415, 'INV0232', 'P0109', 42300, 2),
+(416, 'INV0233', 'P0109', 42300, 8),
+(417, 'INV0234', 'P0108', 27200, 47),
+(418, 'INV0235', 'P0107', 27000, 26),
+(419, 'INV0001', 'P0001', 31000, 8);
 
 -- --------------------------------------------------------
 
@@ -196,7 +200,7 @@ INSERT INTO `detail_penjualan` (`id_detail_penjualan`, `no_invoice`, `kode_produ
 CREATE TABLE `kategori_produk` (
   `id_kt_produk` int(11) NOT NULL,
   `nama_kt_produk` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `kategori_produk`
@@ -227,7 +231,7 @@ CREATE TABLE `log_aktivitas` (
   `waktu` datetime NOT NULL,
   `aktivitas` varchar(300) NOT NULL,
   `id_pengguna` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `log_aktivitas`
@@ -702,7 +706,58 @@ INSERT INTO `log_aktivitas` (`id_aktivitas`, `waktu`, `aktivitas`, `id_pengguna`
 (507, '2022-10-07 15:08:17', 'Tambah Pengguna (Kasir) #PG020 ', 19),
 (508, '2022-10-07 15:08:46', 'Tambah Pengguna (Kasir) #PG033 ', 19),
 (509, '2022-10-07 15:08:55', 'Hapus pengguna #PG033 ', 19),
-(510, '2022-10-07 15:08:57', 'Hapus pengguna #PG020 ', 19);
+(510, '2022-10-07 15:08:57', 'Hapus pengguna #PG020 ', 19),
+(511, '2024-03-04 17:19:45', 'Edit Profil', 19),
+(512, '2024-03-04 17:19:49', 'Update Profil Aplikasi', 19),
+(513, '2024-03-04 17:19:58', 'Update Profil Aplikasi', 19),
+(514, '2024-03-04 05:20:10', '', 19),
+(515, '2024-03-05 01:32:09', '', 19),
+(516, '2024-03-05 01:34:01', '', 19),
+(517, '2024-03-05 01:35:33', '', 13),
+(518, '2024-03-05 01:38:37', '', 13),
+(519, '2024-03-05 01:38:46', '', 19),
+(520, '2024-03-05 01:45:07', '', 19),
+(521, '2024-03-05 01:45:13', '', 13),
+(522, '2024-03-05 01:45:00', 'Input penjualan No Invoice #INV0232 ', 13),
+(523, '2024-03-05 01:46:36', '', 13),
+(524, '2024-03-05 01:46:41', '', 19),
+(525, '2024-03-05 01:46:54', 'Update Profil Aplikasi', 19),
+(526, '2024-03-05 01:47:05', '', 19),
+(527, '2024-03-05 01:47:12', '', 19),
+(528, '2024-03-05 02:18:04', '', 19),
+(529, '2024-03-05 02:18:11', '', 13),
+(530, '2024-03-05 02:18:00', 'Input penjualan No Invoice #INV0233 ', 13),
+(531, '2024-03-05 02:20:00', 'Input penjualan No Invoice #INV0234 ', 13),
+(532, '2024-03-05 03:02:00', 'Input penjualan No Invoice #INV0235 ', 13),
+(533, '2024-03-05 04:38:48', '', 13),
+(534, '2024-03-05 04:39:03', '', 19),
+(535, '2024-03-05 04:40:02', '', 19),
+(536, '2024-03-05 04:44:22', '', 19),
+(537, '2024-03-05 04:44:42', '', 19),
+(538, '2024-03-05 04:46:39', '', 19),
+(539, '2024-03-05 04:49:34', '', 19),
+(540, '2024-03-05 04:50:21', '', 15),
+(541, '2024-03-05 05:01:00', '', 15),
+(542, '2024-03-05 05:01:08', '', 19),
+(543, '2024-03-05 05:01:46', 'Update Profil Aplikasi', 19),
+(544, '2024-03-05 05:09:41', 'Update Profil Aplikasi', 19),
+(545, '2024-03-05 10:24:21', 'Update Profil Aplikasi', 19),
+(546, '2024-03-05 10:24:45', 'Edit Profil', 19),
+(547, '2024-03-05 10:30:05', 'Tambah Pengguna (Admin) #PG020 ', 19),
+(548, '2024-03-05 10:32:33', 'Edit pengguna  #U013 ', 19),
+(549, '2024-03-05 10:34:22', 'Edit pengguna  #U014 ', 19),
+(550, '2024-03-05 10:35:46', 'Hapus Produk #P0109 ', 19),
+(551, '2024-03-05 10:35:49', 'Hapus Produk #P0108 ', 19),
+(552, '2024-03-05 10:42:38', 'Tambah Pelanggan #PN0001 ', 19),
+(553, '2024-03-05 12:18:54', '', 19),
+(554, '2024-03-05 12:20:46', 'Tambah Produk #P0001 ', 19),
+(555, '2024-03-05 12:21:37', 'Tambah Supplier # SP0001', 19),
+(556, '2024-03-05 12:21:52', 'Tambah Supplier # SP0013', 19),
+(557, '2024-03-05 12:22:31', '', 19),
+(558, '2024-03-05 12:22:37', '', 15),
+(559, '2024-03-05 12:22:51', '', 15),
+(560, '2024-03-05 12:23:04', '', 13),
+(561, '2024-03-05 12:24:00', 'Input penjualan No Invoice #INV0001 ', 13);
 
 -- --------------------------------------------------------
 
@@ -719,20 +774,14 @@ CREATE TABLE `pelanggan` (
   `jenis_kelamin` int(11) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `kode_pelanggan`, `nama_pelanggan`, `no_telp`, `alamat_pelanggan`, `jenis_kelamin`, `tanggal_lahir`, `status`) VALUES
-(7, 'P0007', 'Danuar Antasari', '08237484492', 'Jl Mengkubumi no 11', 1, '1993-08-28', 1),
-(8, 'P0008', 'Mila Supriani', '082322233', 'Jl maya no 76', 2, '2000-02-22', 1),
-(9, 'P0009', 'Wahyu Atmajaya', '087823293222', 'Jl batu no 98', 1, '1997-11-11', 1),
-(10, 'P0010', 'Rizki Kurniawan', '08237484492', 'Jl mantrijeron no 67', 1, '1996-08-11', 1),
-(11, 'P0011', 'Ilham Sanjaya', '087823293233', 'Jl sukuarjo no 89', 1, '1998-12-19', 1),
-(12, 'PN001', 'Rini Mustika', '082322230343', 'Jl cendana no 78', 2, '1991-08-26', 1),
-(17, 'PN0013', 'Ferrry Setiawan', '08923274242', 'Jl banguntapan no 22', 1, '1993-11-11', 1);
+(24, 'PN0001', 'Salman', '082216890335', 'Cisaga', 1, '2024-03-05', 1);
 
 -- --------------------------------------------------------
 
@@ -751,16 +800,17 @@ CREATE TABLE `pengguna` (
   `password` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `level` varchar(10) NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `kode_pengguna`, `nama_pengguna`, `email`, `no_telp`, `foto`, `username`, `password`, `level`, `status`) VALUES
-(13, 'U013', 'Riana Latifa', 'riana.latifa@gmail.com', '08239284343', 'safitri ayu.png', 'kasir', '827ccb0eea8a706c4c34a16891f84e7b', 'Kasir', 1),
-(15, 'U014', 'Dimas Ari', 'arimurti95.sd@gmail.com', '082322230343', 'marshel.png', 'manajer_penjualan', '827ccb0eea8a706c4c34a16891f84e7b', 'Manajer', 1),
-(19, 'U016', 'Muhammad Hanafi Saputra', 'hanafisaputra514@gmail.com', '085778110114', 'Foto Instagram.png', 'hanafi', 'ddb4f9f25acf275396aa15605bb059ad', 'Admin', 1);
+(13, 'U013', 'farid', 'farid@gmail.com', '02831761223', 'download (3).jpeg', 'kasir', '202cb962ac59075b964b07152d234b70', 'Kasir', 1),
+(15, 'U014', 'mala', 'mala@gmail.com', '12830193612', 'download (3).jpeg', 'manajer', '202cb962ac59075b964b07152d234b70', 'Manajer', 1),
+(19, 'U016', 'Admin', 'Admin@gmail.com', '085778110114', 'download (3).jpeg', 'admin', '202cb962ac59075b964b07152d234b70', 'Admin', 1),
+(34, 'PG020', 'Salman alfarizi', 'salmanalfaridzi133@gmail.com', '082216890335', 'download (3).jpeg', 'Salman', '202cb962ac59075b964b07152d234b70', 'Admin', 1);
 
 -- --------------------------------------------------------
 
@@ -777,20 +827,14 @@ CREATE TABLE `penjualan` (
   `total_bayar` mediumint(9) NOT NULL,
   `bayar` mediumint(9) NOT NULL,
   `kembali` mediumint(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `penjualan`
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `no_invoice`, `tanggal`, `id_kasir`, `kode_pelanggan`, `total_bayar`, `bayar`, `kembali`) VALUES
-(225, 'INV0001', '2022-09-17 08:27:00', 13, '3', 79100, 80000, 900),
-(226, 'INV0226', '2022-09-17 08:49:00', 13, '3', 27200, 30000, 2800),
-(227, 'INV0227', '2022-09-17 08:53:00', 13, '0', 27000, 30000, 3000),
-(228, 'INV0228', '2022-09-17 09:01:00', 13, '1', 26700, 30000, 3300),
-(229, 'INV0229', '2022-09-17 09:06:00', 13, '1', 9300, 10000, 700),
-(230, 'INV0230', '2022-09-18 11:22:00', 13, '1', 11600, 12000, 400),
-(231, 'INV0231', '2022-09-19 01:21:00', 13, '1', 36300, 37000, 700);
+(236, 'INV0001', '2024-03-05 05:24:00', 13, 'PN0001', 248000, 300000, 52000);
 
 -- --------------------------------------------------------
 
@@ -811,39 +855,14 @@ CREATE TABLE `produk` (
   `keterangan_produk` text NOT NULL,
   `tanggal_produk` date NOT NULL,
   `gambar_produk` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `kode_produk`, `nama_produk`, `satuan`, `kategori_produk`, `stok_produk`, `supplier`, `harga_beli`, `harga_jual`, `keterangan_produk`, `tanggal_produk`, `gambar_produk`) VALUES
-(82, 'P0001', 'Sardines ABC', 'kaleng', 24, 15, 7, 9300, 9800, '', '2020-11-22', 'sardines.PNG'),
-(83, 'P0083', 'Chitato', 'pcs', 24, 42, 7, 8000, 8500, '', '2020-11-22', 'chitato.PNG'),
-(84, 'P0084', 'Kecap Bango', 'pcs', 20, 16, 8, 18300, 18800, '', '2020-11-22', 'kecap bango.PNG'),
-(85, 'P0085', 'Luwak White Koffie (18 Pcs)', 'pcs', 26, 28, 6, 17800, 18200, '', '2020-11-22', 'luwak white coffe.PNG'),
-(86, 'P0086', 'Pasta Gigi Sasha', 'pcs', 21, 10, 6, 7500, 8000, '', '2020-11-22', 'sasha.PNG'),
-(87, 'P0087', 'Mama Lemon 780ml', 'pcs', 22, 16, 4, 10900, 11600, '', '2020-11-22', 'mama lemon.PNG'),
-(88, 'P0088', 'Susu Greenfields Full Cream asasaaa asasa', 'pcs', 26, 8, 7, 16500, 17000, '', '2020-11-22', 'greenfields milk.PNG'),
-(89, 'P0089', 'Minyak Goreng Rose Brand', 'pcs', 20, 15, 7, 23500, 24000, '', '2020-11-22', 'minyak goreng rose brand.PNG'),
-(92, 'P0090', 'Dove Body Wash 550ml', 'pcs', 27, 26, 6, 44500, 47000, '', '2020-11-27', 'DOVE Body Wash Deeply Nourishing 550ml.PNG'),
-(93, 'P0093', 'Close Up Pasta Gigi', 'pcs', 21, 45, 8, 19000, 22000, '', '2020-11-27', 'CLOSE UP Pasta Gigi White Attraction Natural Smile 170g.PNG'),
-(94, 'P0094', 'Roma Sari Gandum Coklat', 'pcs', 24, 89, 7, 6000, 7500, '', '2020-11-27', 'ROMA Sari Gandum Coklat 115g.PNG'),
-(95, 'P0095', 'Bear Brand 189ml', 'kaleng', 26, 97, 8, 8900, 9300, '', '2020-11-27', 'BEAR BRAND Ready To Drink Milk Tin 189ml.PNG'),
-(96, 'P0096', 'Top Coffe White 10pcs', 'pcs', 26, 94, 8, 8900, 9300, '', '2020-11-27', 'TOP COFFEE White 10pcs x 21g.PNG'),
-(97, 'P0097', 'ABC Kopi Susu 10pcs', 'pcs', 26, 98, 6, 14000, 15500, '', '2020-11-27', 'ABC Kopi Susu 10pcs x 31g.PNG'),
-(98, 'P0098', 'Mie Sedap  Goreng Bag 5pcs', 'pcs', 24, 42, 7, 9700, 10200, '', '2020-11-27', 'MIE SEDAAP Mie Instan Goreng Bag 5pcs x 90g.PNG'),
-(99, 'P0099', 'Nice Facial Tissue 900g', 'pcs', 15, 64, 8, 8900, 9600, '', '2020-11-27', 'NICE Facial Tissue Kiloan 900g.PNG'),
-(100, 'P0100', 'Palmolive Body Wash 1L', 'pcs', 27, 0, 4, 40000, 42000, '', '2020-11-27', 'PALMOLIVE Body Wash Cherry Blossom Pump 1L.PNG'),
-(101, 'P0101', 'Ciptadent Pasta Gigi  190g', 'pcs', 21, 0, 4, 6400, 7000, '', '2020-11-27', 'CIPTADENT Pasta Gigi Fresh Tube 190g.PNG'),
-(102, 'P0102', 'Wipol Karbol Classic Pine 780ml', 'pcs', 23, 7, 4, 10000, 11000, '', '2020-11-27', 'WIPOL Karbol Classic Pine Refill 780ml.PNG'),
-(103, 'P0103', 'Cap Lang 60ml', 'botol', 15, 0, 8, 8900, 10000, '', '2020-11-27', 'CAP LANG Minyak Kayu Putih no 2 60ml.PNG'),
-(104, 'P0104', 'Molto Eau De Parfum 720m', 'pcs', 22, 75, 8, 25000, 26700, '', '2020-11-27', 'MOLTO Eau De Parfum Pink Luxury Rose 720ml.PNG'),
-(105, 'P0105', 'Frisan Flag Coklat Box - 800gr', 'pcs', 26, 75, 8, 26000, 27000, '', '2020-11-27', 'FRISIAN FLAG Purefarm Coklat Box - 800gr.PNG'),
-(106, 'P0106', 'Attack Jaz1 1.7kg', 'pcs', 22, 5, 8, 30000, 32000, '', '2020-11-27', 'ATTACK JAZ1 Pesona Segar 1.7kg.PNG'),
-(107, 'P0107', 'Attack Hygiene Plus', 'pcs', 22, 26, 7, 25500, 27000, '', '2020-11-27', 'ATTACK Hygiene Plus Protection Liquid Detergent Pouch 1.2l.PNG'),
-(108, 'P0108', 'Attack Easy Liquid 1l', 'pcs', 22, 47, 8, 26500, 27200, '', '2020-11-27', 'ATTACK Easy Liquid Purple Blossom 1l.PNG'),
-(109, 'P0109', 'Pantene Shampoo 400ml', 'botol', 21, 10, 8, 41200, 42300, '', '2020-11-27', 'PANTENE Shampoo Anti Dandruff 400ml.PNG');
+(111, 'P0001', 'La Ice Purple Boost', 'bungkus', 32, 2, 8, 30000, 31000, '', '2024-03-05', 'LA.jpeg');
 
 -- --------------------------------------------------------
 
@@ -858,14 +877,14 @@ CREATE TABLE `profil_aplikasi` (
   `no_telp` char(14) NOT NULL,
   `website` varchar(50) NOT NULL,
   `logo` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `profil_aplikasi`
 --
 
 INSERT INTO `profil_aplikasi` (`id`, `nama_aplikasi`, `alamat`, `no_telp`, `website`, `logo`) VALUES
-(0, 'Toko Mba Tik', 'Jl. H. Amsar RT.006 RW.009 No.11 Cipulir, Kebayoran Lama, Jakarta Selatan', '085778110114', 'www.tokombatik.com', 'shop.png');
+(0, 'TOKO BAROKAH', 'CISAGA', '085778110114', '', '3d-cartoon-shop-keeper-character.jpg');
 
 -- --------------------------------------------------------
 
@@ -880,17 +899,15 @@ CREATE TABLE `supplier` (
   `no_telp` char(14) NOT NULL,
   `alamat_supplier` varchar(100) NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `supplier`
 --
 
 INSERT INTO `supplier` (`id_supplier`, `kode_supplier`, `nama_supplier`, `no_telp`, `alamat_supplier`, `status`) VALUES
-(4, 'SP0001', 'PT Anugrah Sejahtera', '082322230343', 'Jl mantijeron no 78', 1),
-(6, 'SP0005', 'PT Agung Mulia', '087823293222', 'Jl DI. Panjaitan no 82', 1),
-(7, 'SP0007', 'PT Melia Maju', '087823293233', 'Jl Masjid no 90', 1),
-(8, 'SP0008', 'PT Natan Jaya', '087823293222', 'Jl Bantu KM 20', 1);
+(12, 'SP0001', 'PT MAJU', '212131431', 'cisaga', 1),
+(13, 'SP0013', 'PT BANGKIT SEJAHTERA', '34653121', 'Banjar', 1);
 
 --
 -- Indexes for dumped tables
@@ -962,7 +979,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT untuk tabel `detail_penjualan`
 --
 ALTER TABLE `detail_penjualan`
-  MODIFY `id_detail_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=415;
+  MODIFY `id_detail_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_produk`
@@ -974,37 +991,37 @@ ALTER TABLE `kategori_produk`
 -- AUTO_INCREMENT untuk tabel `log_aktivitas`
 --
 ALTER TABLE `log_aktivitas`
-  MODIFY `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=511;
+  MODIFY `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=562;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
