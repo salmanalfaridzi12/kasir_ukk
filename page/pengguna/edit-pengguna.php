@@ -166,7 +166,7 @@ session_start();
                 <label>Level Pengguna:</label>
                 <select name="level" class="form-control">
                 <?php
-                    $daftar_level = array("Admin", "Kasir", "Manajer");
+                    $daftar_level = array("Admin", "Kasir");
                     for ($i=0;$i<=2;$i++):
                 ?>
                 <option <?php if ($daftar_level[$i]==$level) echo "selected"; ?> value="<?php echo $daftar_level[$i];?>"><?php echo $daftar_level[$i];?></option>

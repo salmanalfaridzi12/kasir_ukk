@@ -61,12 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>KASIR</title>
+  <title>Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="assets/font/font.css" rel="stylesheet" type="text/css">
-  <link href='page/aplikasi/logo/logokasir.png' rel='shortcut icon'>
 
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">

@@ -192,7 +192,6 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                         <div class="h4 mb-0 font-weight-bold">Rp <?php  echo number_format($data['selama_ini'],0,',','.');?></div>
-           
                         </div>
                     </div>    
                 </div>
