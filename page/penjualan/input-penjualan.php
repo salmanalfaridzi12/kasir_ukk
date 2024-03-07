@@ -45,6 +45,11 @@
               <div class="card-body">
                 <!-- rows -->
                 <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                      <button type="button" data-toggle="modal" data-target="#pilih_pelanggan" class="btn btn-primary"><span class="text"><i class="fas fa-user fa-sm"></i> Pilih Pelanggan</span></button>
+                    </div>
+                  </div>
                   <div class="col-sm-12">
                     <div class="form-group">
                       <button type="button" data-toggle="modal" data-target="#modal" class="btn btn-primary"><span class="text"><i class="fas fa-shopping-bag fa-sm"></i> Pilih Produk</span></button>
@@ -85,7 +90,7 @@
             <div class="card mb-4">
               <div class="card-header py-3">
                 <h5 class="m-0 font-weight-bold text-primary">Keranjang Belanja</h5>
-                <p id="tampil_pelanggan">Pelanggan : - <a href="" data-toggle="modal" data-target="#pilih_pelanggan">Pilih</a></p>
+                <h4 class="font-weight-bold" id="tampil_pelanggan">Pelanggan :  <a href="" data-toggle="modal" data-target="#pilih_pelanggan"></a></h4>
               </div>
               <div class="card-body">
                 <!--Menampilkan cart (keranjang belanja) -->
@@ -113,6 +118,8 @@
       </div>
       <!-- Bagian body -->
       <div class="modal-body">
+      <input type="text" id="searchProduct" class="form-control mb-2" placeholder="Cari Produk">
+
         <!-- Tabel daftar produk -->
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -128,7 +135,7 @@
                 <th>Aksi</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="productTableBody">
               <?php
               // include database
               include 'config/database.php';
@@ -182,6 +189,7 @@
       <div class="modal-body">
         <!-- Tabel daftar pelanggan -->
         <div class="table-responsive">
+        <input type="text" id="searchCustomer" class="form-control mb-2" placeholder="Cari pelanggan">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
@@ -194,7 +202,7 @@
                 <th width="15%">Aksi</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="dataTablePelangganBody">
               <?php
               // include database
               include 'config/database.php';
@@ -310,4 +318,35 @@
       }
     });
   });
+  // Event saat pengguna melakukan input pada field pencarian
+  $('#searchProduct').on('keyup', function() {
+    var searchText = $(this).val().toLowerCase();
+    $('#productTableBody tr').filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+    });
+  });
+
+  // Fungsi untuk memuat data produk saat halaman dimuat
+  function loadProducts() {
+    $.ajax({
+      url: 'page/penjualan/load-products.php',
+      method: 'GET',
+      success: function(data) {
+        $('#productTableBody').html(data);
+      }
+    });
+  }
+
+  // Memuat data produk saat halaman dimuat
+  $(document).ready(function() {
+    loadProducts();
+  });
+  // Event saat pengguna melakukan input pada field pencarian pelanggan
+$('#searchCustomer').on('keyup', function() {
+  var searchText = $(this).val().toLowerCase();
+  $('#dataTablePelangganBody tr').filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+  });
+});
+
 </script>

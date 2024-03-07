@@ -83,7 +83,7 @@ $data = mysqli_fetch_array($hasil);
             <a class="collapse-item" href="index.php?page=data_penjualan">Data Penjualan</a>
           </div>
         </div>
-      </li>
+      </li> 
       <?php if ($_SESSION["level"] == "Admin" || $_SESSION["level"] == "Manajer") : ?>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
